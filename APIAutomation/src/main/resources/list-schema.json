@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jsonplaceholder.typicode.com/posts.schema.json",
+  "title": "Posts",
+  "description": "A posts in the site",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "userId": {
+        "description": "Identifier for a user",
+        "type": "integer"
+      },
+      "id": {
+        "description": "The unique identifier for a post",
+        "type": "integer",
+        "uniqueItems": true
+      },
+      "title": {
+        "description": "Post title",
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 100
+      },
+      "body": {
+        "description": "Post body",
+        "type": "string",
+        "minLength": 3,
+        "maxLength": 500
+      }
+    },
+    "required": [ "userId","id", "title", "body" ]
+  }
+}
